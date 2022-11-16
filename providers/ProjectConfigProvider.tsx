@@ -1,12 +1,12 @@
 import { firstParam } from '@cardinal/common'
-import type { ProjectConfig } from 'config/config'
+import { ProjectConfig } from 'config/config'
 import { projectConfigs } from 'config/config'
-import type { NextPageContext } from 'next'
-import type { ReactChild } from 'react'
+import { NextPageContext } from 'next'
+import { ReactChild } from 'react'
 import React, { useContext, useState } from 'react'
 
 export const getInitialProps = async ({
-  ctx,
+  ctx
 }: {
   ctx: NextPageContext
 }): Promise<{ cluster: string; config: ProjectConfig }> => {
@@ -16,7 +16,6 @@ export const getInitialProps = async ({
     : (ctx.query.project || ctx.query.host)?.includes('test')
     ? 'testnet'
     : ctx.query.cluster || process.env.BASE_CLUSTER
-
   const projectParams =
     ctx.query.config || ctx.req?.headers.host || ctx.query.host
   const project =
@@ -25,20 +24,20 @@ export const getInitialProps = async ({
       ?.split('.')[0]
       ?.replace('dev-', '')
 
-  const defaultConfig = projectConfigs['unverified']!
+  const defaultConfig = projectConfigs['bat']!
   return {
-    cluster: firstParam(cluster),
+    cluster: 'mainnet',
     config: project
       ? projectConfigs[project] ||
         Object.values(projectConfigs).find(
           (config) => config.hostname && projectParams.includes(config.hostname)
         ) ||
         defaultConfig
-      : defaultConfig,
+      : defaultConfig
   }
 }
 
-export function getLink(path: string, withParams = true) {
+export function getLink (path: string, withParams = true) {
   return `${window.location.origin}${path}${
     withParams
       ? path.includes('?') && window.location.search
@@ -53,15 +52,16 @@ export interface ProjectConfigValues {
   setProjectConfig: (s: string) => void
 }
 
-const ProjectConfigValues: React.Context<ProjectConfigValues> =
-  React.createContext<ProjectConfigValues>({
-    config: projectConfigs['unverified']!,
-    setProjectConfig: () => {},
-  })
+const ProjectConfigValues: React.Context<ProjectConfigValues> = React.createContext<
+  ProjectConfigValues
+>({
+  config: projectConfigs['bat']!,
+  setProjectConfig: () => {}
+})
 
-export function ProjectConfigProvider({
+export function ProjectConfigProvider ({
   children,
-  defaultConfig,
+  defaultConfig
 }: {
   children: ReactChild
   defaultConfig: ProjectConfig
@@ -75,7 +75,7 @@ export function ProjectConfigProvider({
           if (projectConfigs[project]) {
             setConfig(projectConfigs[project]!)
           }
-        },
+        }
       }}
     >
       {children}
@@ -83,6 +83,6 @@ export function ProjectConfigProvider({
   )
 }
 
-export function useProjectConfig(): ProjectConfigValues {
+export function useProjectConfig (): ProjectConfigValues {
   return useContext(ProjectConfigValues)
 }

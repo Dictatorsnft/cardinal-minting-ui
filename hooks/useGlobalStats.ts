@@ -46,11 +46,9 @@ export const useGlobalStats = () => {
     }
     console.log(queryResult, tokenManagers)
     return {
-      'total-mints': { data: 4 },
-      'total-tokens': {
-        data: tokenManagers.q1?.aggregate?.count ?? 0,
-      },
-      'total-wallets': { data: tokenManagers.q2?.aggregate?.count ?? 0 },
+      'total-mints': { data: 5300 },
+      'total-tokens': { data: 262463},
+      'total-wallets': { data: 163 },
     }
   })
 }
@@ -58,14 +56,14 @@ export const useGlobalStats = () => {
 export const statsNameMapping: { key: StatKey; displayName: string }[] = [
   {
     key: 'total-mints',
-    displayName: 'Total Mints',
-  },
-  {
-    key: 'total-tokens',
-    displayName: 'Total Tokens',
+    displayName: 'Dictators Supply',
   },
   {
     key: 'total-wallets',
-    displayName: 'Unique Wallets',
+    displayName: 'Listed Count',
+  },
+  {
+    key: 'total-tokens',
+    displayName: 'NUKE In Circulation',
   },
 ]

@@ -14,7 +14,7 @@ export const MintInfo = () => {
             alt={config.displayName}
           />
         )}
-        <div className="bold text-6xl">{config.displayName}</div>
+        <div className="bold text-4xl">{config.displayName}</div>
       </div>
       <div className="flex items-center gap-4 text-light-0">
         {config.socialLinks?.map(({ icon, link }, i) => {

@@ -20,7 +20,6 @@ import {
   TorusWalletAdapter,
 } from '@solana/wallet-adapter-wallets'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ToastContainer } from 'common/Notification'
 import type { ProjectConfig } from 'config/config'
 import type { AppProps } from 'next/app'
@@ -94,7 +93,6 @@ const App = ({
                     <>
                       <ToastContainer />
                       <Component {...pageProps} />
-                      {<ReactQueryDevtools initialIsOpen={false} />}
                     </>
                   </WalletModalProvider>
                 </ModalProvider>

@@ -8,13 +8,13 @@ import {
   FaTiktok,
   FaTwitch,
   FaTwitter,
+  FaBolt,
 } from 'react-icons/fa'
 
 export const SOCIALS = {
-  discord: { icon: <FaDiscord />, link: 'https://discord.gg/byq6uNTugq' },
-  github: { icon: <FaGithub />, link: 'https://github.com/cardinal-labs' },
-  medium: { icon: <FaMedium />, link: 'https://cardinal-labs.medium.com/' },
-  twitter: { icon: <FaTwitter />, link: 'https://twitter.com/cardinal_labs' },
+  discord: { icon: <FaDiscord />, link: 'https://discord.gg/Wnc9vyYfDB' },
+  twitter: { icon: <FaTwitter />, link: 'https://twitter.com/DictatorsNFT_' },
+  hyperspace: { icon: <FaBolt />, link: 'https://hyperspace.xyz/collection/3JnRBq3Gh1doxXDztb68iMLTnYcx3yWt3YrbQR8FJ8PV' },
 }
 
 export type IconKey =
@@ -43,4 +43,5 @@ export const SocialIcon: React.FC<Props> = ({ iconKey }: Props) =>
     tiktok: <FaTiktok />,
     instagram: <FaFacebook />,
     web: <FaGlobe />,
+    hyperspace: <FaBolt/>,
   }[iconKey])

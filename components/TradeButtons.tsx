@@ -29,7 +29,7 @@ export const TradeButtons = ({
       {(!tradeButtons || tradeButtons.includes('coralcube')) && (
         <ButtonSmall
           onClick={() =>
-            window.open(`https://coralcube.io/collection/bat`, '_blank')
+            window.open(`https://coralcube.io/collection/GXL2tbxMQsZMD83LNhYzdzoheq72ySQxC2JUKUtWKLWo`, '_blank')
           }
           className="flex w-full items-center"
         >

@@ -23,24 +23,45 @@ export const HeaderSlim = () => {
   }, [router.asPath, tab])
 
   return (
-    <div className="w-full px-4 py-4">
-      <div className="flex min-h-[72px] flex-wrap items-center justify-center gap-4 rounded-xl bg-white bg-opacity-5 py-4 px-8 md:justify-between">
-        <div className="flex items-center gap-5">
+    <div className='w-full px-4 py-4'>
+      <div className='flex min-h-[72px] flex-wrap items-center justify-center gap-4 rounded-xl bg-white bg-opacity-5 py-4 px-8 md:justify-between'>
+        <div className='flex items-center gap-5'>
           <div
-            className="flex cursor-pointer items-center transition-opacity hover:opacity-60"
+            className='flex cursor-pointer items-center transition-opacity'
             onClick={() => {
               router.push(`/${location.search}`)
             }}
           >
-            <LogoTitled className="inline-block h-6" />
+            <img src='/warloads.png' className='hover:opacity-60' width={"180px"}></img>
           </div>
           {environment.label !== 'mainnet-beta' && (
             <>
-              <div className="text-primary">{environment.label}</div>
+              <div className='text-primary'>{environment.label}</div>
             </>
           )}
         </div>
-        <div className="flex-5 flex items-center justify-end gap-6">
+        <div className='hidden md:flex items-center"'>
+          <button type="button" onClick={() => router.push('/#')} className='md:px-5 sm:2 rounded-md hover:bg-gray-600 outline-ring-gray-300 ...'>
+           HOME
+          </button>
+          <button disabled className='text-slate-400 md:px-5 sm:2'>
+            STAKE
+          </button>
+          <button type="button" onClick={() => router.push('/upgrade')} className='md:px-5 sm:2 rounded-md hover:bg-gray-600 outline-ring-gray-300 ...'>
+            UPGRADE
+          </button>
+          <button disabled className='text-slate-400 md:px-5 sm:2'>
+            EXPLORE
+          </button>
+          <button type="button" onClick={() => router.push('/nuketopia')} className='md:px-5 sm:2 border-solid border-2 border-gray-500 rounded-md  hover:bg-gray-600 outline-ring-gray-300 active:bg-gray-600...'>NUKETOPIA</button>
+          <button disabled className='text-slate-400 md:px-5 sm:2'>
+            GUILD
+          </button>
+          <button disabled className='text-slate-400 text-slate-400md:px-5 sm:2'>
+            MERCH
+          </button>
+        </div>
+        <div className='flex-5 flex items-center justify-end gap-6 '>
           {wallet.connected && wallet.publicKey ? (
             <AccountConnect
               dark={true}
@@ -51,7 +72,7 @@ export const HeaderSlim = () => {
             />
           ) : (
             <ButtonSmall
-              className="text-xs"
+              className='text-xs'
               onClick={() => walletModal.setVisible(true)}
             >
               <>

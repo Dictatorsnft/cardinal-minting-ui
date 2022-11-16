@@ -6,64 +6,52 @@ export function Placeholder() {
   return (
     <div className="h-[300px] animate-pulse rounded-lg bg-white bg-opacity-5 p-10"></div>
   )
+  
 }
+
+
 
 function Home() {
   return (
-    <div className="relative z-0 flex min-h-screen flex-col bg-dark-5">
+    <div className="relative z-0 flex min-h-screen flex-col bg-cover" style={{ backgroundImage: `url(/bg.gif)` }}>
       <Head>
-        <title>Minting UI</title>
-        <meta name="description" content="Cardinal NFT Minting UI" />
+        <title>Dictators</title>
+        <meta name="description" content="Supremacy" />
         <link rel="icon" href={'/favicon.ico'} />
         <script
           defer
-          data-domain="stake.cardinal.so"
+          data-domain="cit.nukepad.io"
           src="https://plausible.io/js/plausible.js"
         />
-        <meta name="og:title" content={`Cardinal NFT Minting UI`} />
-        <meta name="og:description" content="Mint on Cardinal NFT Minting UI" />
-        <meta property="og:url" content="https://rent.cardinal.so" />
+        <meta name="og:title" content={`Dictators by NUKE Labs`} />
+        <meta name="og:description" content="Dictators by NUKE Labs" />
+        <meta property="og:url" content="https://cit.nukepad.io" />
         <meta
           name="og:image"
           content={`${process.env.NEXT_PUBLIC_BASE_URL}/api/preview`}
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@cardinal_labs" />
+        <meta name="twitter:site" content="@DictatorsNFT_" />
         <script
           defer
-          data-domain="mint.cardinal.so"
+          data-domain="cit.nukepad.io"
           src="https://plausible.io/js/script.js"
         ></script>
       </Head>
       <MainHero />
       <div className="z-10 mx-auto mt-48 flex grow flex-col gap-24 px-8 md:px-16">
         <div className="flex w-full flex-col text-center">
-          <div className="mb-2 text-3xl text-light-0">Step 1</div>
-          <div className="text-lg text-medium-3">Start your mint</div>
+          <div className="mb-2 text-3xl text-light-0">Nuklification</div>
+          <div className="text-lg text-medium-3"></div>
           <div className="mb-4 text-base italic text-medium-3">
-            Coming soon...
+            Starts on 21st November...
           </div>
         </div>
-        <div className="mx-auto h-48 w-[2px] bg-border"></div>
-        <div className="flex w-full flex-col text-center">
-          <div className="mb-2 text-3xl text-light-0">Step 2</div>
-          <div className="text-lg text-medium-3">Add your paramaters</div>
-          <div className="mb-4 text-base italic text-medium-3">
-            Coming soon...
-          </div>
-        </div>
-        <div className="mx-auto h-48 w-[2px] bg-border"></div>
-        <div className="flex w-full flex-col text-center">
-          <div className="mb-2 text-3xl text-light-0">Step 3</div>
-          <div className="text-lg text-medium-3">Share your page</div>
-          <div className="mb-4 text-base italic text-medium-3">
-            Coming soon...
-          </div>
-        </div>
-        <div className="mx-auto h-48 w-[2px] bg-border"></div>
       </div>
+      
       <FooterSlim />
     </div>
+    
   )
 }
 

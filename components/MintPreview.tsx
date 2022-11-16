@@ -14,7 +14,7 @@ export const MintPreview = () => {
       : config.mintImages
   const [[imageUrl], setImageUrl] = useState<[string | undefined, number]>([
     undefined,
-    0,
+    0
   ])
   const candyMachineData = useCandyMachineData()
 
@@ -28,24 +28,17 @@ export const MintPreview = () => {
           mintImages
             ? mintImages[next]
             : `https://picsum.photos/600/600?q=${next}`,
-          next,
+          next
         ]
       })
   }, [UTCNow])
 
   return (
-    <div className="aspect-square w-full">
+    <div className='aspect-square w-full'>
       {candyMachineData.data && configLineImages.isFetched ? (
-        <img
-          src={
-            imageUrl ??
-            (mintImages ? mintImages[0] : 'https://picsum.photos/600/600')
-          }
-          alt="Mint preview"
-          className="w-full rounded-lg"
-        />
+        <video src='/3.mp4' loop autoPlay controls></video>
       ) : (
-        <div className="aspect-square animate-pulse rounded-lg bg-border"></div>
+        <div className='aspect-square animate-pulse rounded-lg bg-border'></div>
       )}
     </div>
   )

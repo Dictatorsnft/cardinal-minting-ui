@@ -63,240 +63,100 @@ export type ProjectConfig = {
 export const LISTING_AUTHORITY_NAME = 'global'
 
 export const projectConfigs: { [key: string]: ProjectConfig } = {
-  'bat-premint': {
-    name: 'bat-premint',
-    displayName: 'BAT x Adam Ape for Brave',
-    description: `Basic Attention Token (BAT) has joined forces with Adam Ape, a renowned multidisciplinary artist in Web3 and the traditional graphic design and digital animation space, on its 2500-piece genesis Solana NFT collection: BAT x Adam Ape for Brave.\n\nTogether, they created four PFP-style NFTs modeled after Brave’s logo. Each of the four NFTs—The Curious, The Dabbler, The Degen, and The Sage—is dynamically animated with facial expressions and sound effects and represents one of four stages of immersion in Web3.`,
-    // logoImage: 'brave/brave-logo.png',
-    websiteUrl: 'https://cardinal.so',
-    socialLinks: [
-      {
-        icon: 'web',
-        link: 'https://basicattentiontoken.org/',
-      },
-      {
-        icon: 'twitter',
-        link: 'https://twitter.com/AttentionToken',
-      },
-    ],
-    colors: {
-      accent: '#e74a27',
-      glow: '#e74a27',
-    },
-    sponsors: ['/logos/bat.png', '/logos/brave.png', '/logos/magic-eden.png'],
-    tradeButtons: ['coralcube'],
-    mintImages: ['brave/brave-0.png', 'brave/brave-1.png', 'brave/brave-2.png'],
-    candyMachineId: 'B9MLpsMTTVpZBpWSFnbYrW9CV2oPsWq9kp8xjXtZXUQt',
-    goLiveSeconds: 1668094200,
-    phases: [
-      {
-        tooltip: 'Free Premint',
-        title: 'Phase 0',
-        subtitle: 'Premint',
-        description: '',
-        allowlist: {
-          gatekeeperNetwork: '5yLQFwUm1NStXzhveYX3KNw2sJr5BAdQmrg1UbbB1nmi',
-          expireOnUse: true,
-        },
-      },
-      {
-        tooltip: 'Must hold an Adam Ape NFT',
-        title: 'Phase I',
-        subtitle: 'Adam Ape NFT holders',
-        description: '',
-        allowlist: {
-          gatekeeperNetwork: 'GnBuHefsQasF2spzZNkqQGN6AstFo9VEtrmmVPsbN6d3',
-          expireOnUse: true,
-        },
-        payment: {
-          paymentAmount: 3000000000,
-        },
-        goLiveSeconds: 1668099600,
-        endSeconds: 1668099600 + 60 * 30,
-      },
-      {
-        tooltip: 'Mint using BAT token',
-        title: 'Phase II',
-        subtitle: 'Whitelist BAT Mint',
-        description: '',
-        allowlist: {
-          gatekeeperNetwork: 'B21AQApRrSw9RrYLDdBC7RighbGY1CAsm2pRxczBPcNu',
-          expireOnUse: true,
-        },
-        payment: {
-          paymentMint: 'EPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz',
-          paymentAmount: 20000000000,
-        },
-        goLiveSeconds: 1668099600 + 60 * 30,
-        endSeconds: 1668099600 + 60 * 60,
-      },
-      {
-        title: 'Phase III',
-        subtitle: 'Whitelist SOL Mint',
-        description: '',
-        allowlist: {
-          gatekeeperNetwork: 'B21AQApRrSw9RrYLDdBC7RighbGY1CAsm2pRxczBPcNu',
-          expireOnUse: true,
-        },
-        payment: {
-          paymentAmount: 3000000000,
-        },
-        goLiveSeconds: 1668099600 + 60 * 60,
-        endSeconds: 1668099600 + 60 * 120,
-      },
-      {
-        title: 'Phase IV',
-        subtitle: 'Public SOL Mint',
-        description: '',
-        payment: {
-          paymentAmount: 3000000000,
-        },
-        goLiveSeconds: 1668099600 + 60 * 120,
-        endSeconds: 0,
-      },
-    ],
-  },
   bat: {
-    name: 'bat',
-    displayName: 'BAT x Adam Ape for Brave',
-    description: `Basic Attention Token (BAT) has joined forces with Adam Ape, a renowned multidisciplinary artist in Web3 and the traditional graphic design and digital animation space, on its 2500-piece genesis Solana NFT collection: BAT x Adam Ape for Brave.\n\nTogether, they created four PFP-style NFTs modeled after Brave’s logo. Each of the four NFTs—The Curious, The Dabbler, The Degen, and The Sage—is dynamically animated with facial expressions and sound effects and represents one of four stages of immersion in Web3.`,
-    // logoImage: 'brave/brave-logo.png',
-    websiteUrl: 'https://cardinal.so',
+    name: 'Battle To Earn',
+    displayName: 'Battle To Earn',
+    description: `10000 nuclear grade warloads to open your access to nuketopia with game characters, base weapons and inventory item drops.`,
+    logoImage: 'warloads.ico',
+    websiteUrl: '',
     socialLinks: [
-      {
-        icon: 'web',
-        link: 'https://basicattentiontoken.org/',
-      },
-      {
-        icon: 'twitter',
-        link: 'https://twitter.com/AttentionToken',
-      },
-    ],
-    colors: {
-      accent: '#e74a27',
-      glow: '#e74a27',
-    },
-    sponsors: ['/logos/bat.png', '/logos/brave.png', '/logos/magic-eden.png'],
-    tradeButtons: ['coralcube'],
-    mintImages: ['brave/brave-0.png', 'brave/brave-1.png', 'brave/brave-2.png'],
-    candyMachineId: 'B9MLpsMTTVpZBpWSFnbYrW9CV2oPsWq9kp8xjXtZXUQt',
-    goLiveSeconds: 1668099600,
-    phases: [
-      {
-        tooltip: 'Must hold an Adam Ape NFT',
-        title: 'Phase I',
-        subtitle: 'Adam Ape NFT holders',
-        description: '',
-        allowlist: {
-          gatekeeperNetwork: 'GnBuHefsQasF2spzZNkqQGN6AstFo9VEtrmmVPsbN6d3',
-          expireOnUse: true,
-        },
-        whitelistMintSettings: {
-          mint: '7fpz2iSx5PaLkppg4pQwp3C6XfpmaeYpFcoXnuoEZQ7H',
-        },
-        payment: {
-          paymentMint: 'So11111111111111111111111111111111111111112',
-          paymentAmount: 3000000000,
-        },
-        goLiveSeconds: 1668099600,
-        endSeconds: 1668099600 + 60 * 30,
-      },
-      {
-        tooltip: 'Mint using BAT token',
-        title: 'Phase II',
-        subtitle: 'Whitelist BAT Mint',
-        description: '',
-        allowlist: {
-          gatekeeperNetwork: 'B21AQApRrSw9RrYLDdBC7RighbGY1CAsm2pRxczBPcNu',
-          expireOnUse: true,
-        },
-        whitelistMintSettings: {
-          mint: '7fpz2iSx5PaLkppg4pQwp3C6XfpmaeYpFcoXnuoEZQ7H',
-        },
-        payment: {
-          paymentMint: 'EPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz',
-          paymentAmount: 20000000000,
-        },
-        goLiveSeconds: 1668099600 + 60 * 30,
-        endSeconds: 1668099600 + 60 * 60,
-      },
-      {
-        title: 'Phase III',
-        subtitle: 'Whitelist SOL Mint',
-        description: '',
-        allowlist: {
-          gatekeeperNetwork: 'B21AQApRrSw9RrYLDdBC7RighbGY1CAsm2pRxczBPcNu',
-          expireOnUse: true,
-        },
-        whitelistMintSettings: {
-          mint: '7fpz2iSx5PaLkppg4pQwp3C6XfpmaeYpFcoXnuoEZQ7H',
-        },
-        payment: {
-          paymentAmount: 3000000000,
-        },
-        goLiveSeconds: 1668099600 + 60 * 60,
-        endSeconds: 1668099600 + 60 * 120,
-      },
-      {
-        title: 'Phase IV',
-        subtitle: 'Public SOL Mint',
-        description: '',
-        allowlist: {},
-        whitelistMintSettings: {},
-        payment: {
-          paymentAmount: 3000000000,
-        },
-        goLiveSeconds: 1668099600 + 60 * 120,
-        endSeconds: 0,
-      },
-    ],
-  },
-  'test-0': {
-    name: 'test-0',
-    displayName: 'Test 0',
-    description:
-      'Basic Attention Token (BAT) has joined forces with Adam Ape, a renowned multidisciplinary artist in Web3 and the traditional graphic design and digital animation space, on its 2500-piece genesis Solana NFT collection: BAT x Adam Ape for Brave.',
-    websiteUrl: 'https://cardinal.so',
-    socialLinks: [
-      {
-        icon: 'web',
-        link: 'https://google.com/',
-      },
-      {
-        icon: 'twitter',
-        link: 'https://google.com',
-      },
       {
         icon: 'discord',
-        link: 'https://google.com',
-      },
-    ],
-    colors: {
-      accent: '#278ace',
-      glow: '#278ace',
-    },
-    candyMachineId: '7oUA5rq31mm2tC5sJMLY3CLSMunVokqmePPj9VBJR5HM',
-  },
-  unverified: {
-    name: 'unverified',
-    displayName: 'Beta Testing',
-    description:
-      'Basic Attention Token (BAT) has joined forces with Adam Ape, a renowned multidisciplinary artist in Web3 and the traditional graphic design and digital animation space, on its 2500-piece genesis Solana NFT collection: BAT x Adam Ape for Brave.',
-    websiteUrl: 'https://cardinal.so',
-    socialLinks: [
-      {
-        icon: 'web',
-        link: 'https://cardinal.so/',
+        link: 'https://discord.gg/Wnc9vyYfDB',
       },
       {
         icon: 'twitter',
-        link: 'https://twitter.com/cardinal_labs',
+        link: 'https://twitter.com/DictatorsNFT_',
       },
     ],
     colors: {
-      accent: '#278ace',
-      glow: '#278ace',
+      accent: '#000000',
+      glow: '##EBA300',
     },
-    candyMachineId: '',
+    sponsors: ['/logos/bat.png', '/logos/brave.png', '/logos/magic-eden.svg'],
+    tradeButtons: ['hyperspace'],
+    mintImages: ['brave/brave-0.png', 'brave/brave-1.png', 'brave/brave-2.png'],
+    candyMachineId: '8eAEcEoz94ZqZroKyHWtTSCN93y4341QumaNgfSEsouP',
+    // goLiveSeconds: 1668099600,
+    // phases: [
+    //   {
+    //     tooltip: 'Must hold an Adam Ape NFT',
+    //     title: 'Phase I',
+    //     subtitle: 'Adam Ape NFT holders',
+    //     description: '',
+    //     allowlist: {
+    //       gatekeeperNetwork: 'GnBuHefsQasF2spzZNkqQGN6AstFo9VEtrmmVPsbN6d3',
+    //       expireOnUse: true,
+    //     },
+    //     whitelistMintSettings: {
+    //       mint: '7fpz2iSx5PaLkppg4pQwp3C6XfpmaeYpFcoXnuoEZQ7H',
+    //     },
+    //     payment: {
+    //       paymentMint: 'So11111111111111111111111111111111111111112',
+    //       paymentAmount: 3000000000,
+    //     },
+    //     goLiveSeconds: 1668099600,
+    //     endSeconds: 1668099600 + 60 * 30,
+    //   },
+    //   {
+    //     tooltip: 'Mint using BAT token',
+    //     title: 'Phase II',
+    //     subtitle: 'Whitelist BAT Mint',
+    //     description: '',
+    //     allowlist: {
+    //       gatekeeperNetwork: 'B21AQApRrSw9RrYLDdBC7RighbGY1CAsm2pRxczBPcNu',
+    //       expireOnUse: true,
+    //     },
+    //     whitelistMintSettings: {
+    //       mint: '7fpz2iSx5PaLkppg4pQwp3C6XfpmaeYpFcoXnuoEZQ7H',
+    //     },
+    //     payment: {
+    //       paymentMint: 'EPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz',
+    //       paymentAmount: 20000000000,
+    //     },
+    //     goLiveSeconds: 1668099600 + 60 * 30,
+    //     endSeconds: 1668099600 + 60 * 60,
+    //   },
+    //   {
+    //     title: 'Phase III',
+    //     subtitle: 'Whitelist SOL Mint',
+    //     description: '',
+    //     allowlist: {
+    //       gatekeeperNetwork: 'B21AQApRrSw9RrYLDdBC7RighbGY1CAsm2pRxczBPcNu',
+    //       expireOnUse: true,
+    //     },
+    //     whitelistMintSettings: {
+    //       mint: '7fpz2iSx5PaLkppg4pQwp3C6XfpmaeYpFcoXnuoEZQ7H',
+    //     },
+    //     payment: {
+    //       paymentAmount: 3000000000,
+    //     },
+    //     goLiveSeconds: 1668099600 + 60 * 60,
+    //     endSeconds: 1668099600 + 60 * 120,
+    //   },
+    //   {
+    //     title: 'Phase IV',
+    //     subtitle: 'Public SOL Mint',
+    //     description: '',
+    //     allowlist: {},
+    //     whitelistMintSettings: {},
+    //     payment: {
+    //       paymentAmount: 3000000000,
+    //     },
+    //     goLiveSeconds: 1668099600 + 60 * 120,
+    //     endSeconds: 0,
+    //   },
+    // ],
   },
+
 }

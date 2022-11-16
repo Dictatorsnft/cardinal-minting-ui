@@ -8,7 +8,7 @@ import { useWhitelistTokenAccount } from 'hooks/useWhitelistTokenAccount'
 import { useProjectConfig } from 'providers/ProjectConfigProvider'
 import { useUTCNow } from 'providers/UTCNowProvider'
 
-export const MintButton = () => {
+export const MintButton = ({ onMint }: any) => {
   const handleMint = useHandleMint()
   const { config } = useProjectConfig()
 
@@ -32,18 +32,16 @@ export const MintButton = () => {
           parseInt(candyMachineData.data?.data.price.toString() ?? '0'))
   )
   const disabled =
-    !activePhase ||
     !candyMachineData.data ||
     candyMachineData.data.itemsRedeemed.toString() ===
-      candyMachineData.data.data.maxSupply.toString() ||
+      candyMachineData.data.data.itemsAvailable.toString() ||
     !walletId ||
     (!!candyMachineData.data?.data.gatekeeper && !isValid(gatewayToken.data)) ||
     (!!candyMachineData.data?.data.whitelistMintSettings &&
-      (whitelistTokenAccount.data?.amount.toNumber() ?? 0) <= 0) ||
-    (!!config.goLiveSeconds && UTCNow < (config.goLiveSeconds ?? 0))
+      (whitelistTokenAccount.data?.amount.toNumber() ?? 0) <= 0)
   return (
     <Tooltip
-      className="w-full cursor-pointer"
+      className='w-full cursor-pointer'
       tooltip={
         disabled
           ? 'Wallet not elligible to mint during phase. Check whitelist.'
@@ -51,15 +49,15 @@ export const MintButton = () => {
       }
     >
       <Button
-        className="w-full justify-center"
+        className='w-full justify-center'
         loading={handleMint.isLoading}
         inlineLoader
         disabled={disabled}
-        onClick={() => handleMint.mutate()}
+        onClick={onMint}
       >
         {config.logoImage && (
           <img
-            className="mr-1 w-4"
+            className='mr-1 w-4'
             src={config.logoImage}
             alt={config.displayName}
           />
